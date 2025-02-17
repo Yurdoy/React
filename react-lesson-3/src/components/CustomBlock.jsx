@@ -1,20 +1,20 @@
 function CustomBlock(props) {
   const {
+    postTitle,
+    postDescription,
     postAuthor,
     postAuthorAge,
-    postDescription,
     postMainContent,
-    postTitle,
   } = props;
   return (
     <div>
-      <h2>{postAuthor}</h2>
-      <strong>{postAuthorAge}</strong>
+      <h2>{postTitle}</h2>
+      <strong>{postDescription}</strong>
       <div>
-        <h3>{postDescription}</h3>
-        <strong>{postMainContent}</strong>
+        <h3>{postAuthor}</h3>
+        <strong>{postAuthorAge}</strong>
       </div>
-      <div>{postTitle}</div>
+      <div>{postMainContent}</div>
     </div>
   );
 }
