@@ -1,7 +1,10 @@
 import "./App.css";
+import Counter from "./components/Counter";
 import EventsComponent from "./components/EventsComponent";
 import FeedbackForm from "./components/FeedbackForm";
 import ImageCarousel from "./components/ImageCarousel";
+import MyForm from "./components/MyForm";
+import Title from "./components/Title";
 
 function App() {
   const sayHello = () => {
@@ -14,6 +17,9 @@ function App() {
       <EventsComponent />
       <FeedbackForm />
       <ImageCarousel />
+      <MyForm />
+      <Title />
+      <Counter />
     </>
   );
 }
