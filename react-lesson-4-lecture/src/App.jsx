@@ -1,4 +1,5 @@
 import "./App.css";
+import Animals from "./components/Animals";
 import Counter from "./components/Counter";
 import EventsComponent from "./components/EventsComponent";
 import FeedbackForm from "./components/FeedbackForm";
@@ -20,6 +21,7 @@ function App() {
       <MyForm />
       <Title />
       <Counter />
+      <Animals />
     </>
   );
 }
