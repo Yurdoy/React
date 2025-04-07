@@ -1,0 +1,10 @@
+.active {
+  color: red;
+  background-color: magenta;
+  font-size: 16px;
+}
+
+.default {
+  color: blue;
+  background-color: grey;
+}

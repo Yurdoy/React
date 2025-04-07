@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e4019a;
+  max-height: 100px;
+  max-width: 1440px;
+}
+
+.logo {
+  width: 83px;
+  height: 85px;
+  padding: 8px;
+}
+
+.header-content__right {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}

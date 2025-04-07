@@ -1,0 +1,46 @@
+header {
+  background-color: #3f5cc0;
+  display: flex;
+  padding: 38px 130px;
+  gap: 330px;
+}
+
+main {
+  padding: 20px 40px;
+  background-color: #96dcff;
+  height: 100vh;
+}
+
+.headerButton {
+  display: flex;
+  gap: 132px;
+}
+
+.logoImg {
+  width: 132px;
+  height: 48px;
+}
+
+.postListDiv {
+  background-color: #7d9fff;
+  width: 1043px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.postListText {
+  padding-bottom: 124px;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.postItemDiv {
+  display: flex;
+  gap: 60px;
+}
+
+.postItemLogoPart {
+  display: flex;
+}
