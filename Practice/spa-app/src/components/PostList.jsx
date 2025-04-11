@@ -1,7 +1,14 @@
 import React from "react";
+import PostItem from "./PostItem";
 
-const PostForm = () => {
-  return <div></div>;
+const PostList = ({ posts, deletePost }) => {
+  return (
+    <div>
+      {posts.map((post) => (
+        <PostItem key={post.id} post={post} deletePost={deletePost} />
+      ))}
+    </div>
+  );
 };
 
-export default PostForm;
+export default PostList;
