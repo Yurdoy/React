@@ -1,0 +1,33 @@
+.footer {
+  padding: 73px 250px 64px 250px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #333331;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__contacts {
+  color: white;
+}
+
+.footer__number {
+  padding: 39px 0 93px 0;
+}
+
+.footer__icons {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.footer input {
+  background: none;
+  border-top: none;
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-right: none;
+  width: 407px;
+  padding-bottom: 15px;
+  outline: none;
+  color: white;
+}
