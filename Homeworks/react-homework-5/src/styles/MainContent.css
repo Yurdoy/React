@@ -32,47 +32,87 @@ p {
 }
 
 .google-btn {
+  background-color: #0c0417;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   width: 97px;
   height: 98px;
-  border: none;
-  /* border-radius: 30px; */
-  background-size: contain;
-  background-color: #0c0417;
-  background-position: center;
-  background-image: url("../assets/images/google-icon.svg");
-  background-repeat: no-repeat;
-  transition: background-image 0.3s ease;
-  animation: 200ms ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .google-btn:hover {
-  background-image: url("../assets/images/google-blue-icon.svg");
-  background-repeat: no-repeat;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  border: none;
+  transform: translateY(20px);
+}
+
+.google-icon.default {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.google-icon.hover {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.google-icon {
+  position: absolute;
+  width: 97px;
+  height: 98px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.google-btn:hover .google-icon.default {
+  opacity: 0;
+}
+
+.google-btn:hover .google-icon.hover {
+  opacity: 1;
+  transform: scale(1.8);
 }
 
 .twitter-btn {
-  width: 106px;
-  height: 98px;
-  border: none;
-  border-radius: 30px;
-  background-size: contain;
   background-color: #0c0417;
-  background-position: center;
-  background-image: url("../assets/images/twitter-icon.svg");
-  background-repeat: no-repeat;
-  transition: background-image 0.3s ease;
-  animation: 200ms ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 97px;
+  height: 98px;
 }
 
 .twitter-btn:hover {
-  background-image: url("../assets/images/google-icon.svg");
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+}
+
+.twitter-icon.default {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.twitter-icon.hover {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.twitter-icon {
+  position: absolute;
+  width: 97px;
+  height: 98px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.twitter-btn:hover .twitter-icon.default {
+  opacity: 0;
+}
+
+.twitter-btn:hover .twitter-icon.hover {
+  opacity: 1;
+  transform: scale(1.8);
 }
 
 .apple-btn {
@@ -82,24 +122,13 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* border-radius: 30px; */
-  /* background-size: contain; */
-
-  /* background-position: center; */
-  /* background-image: url("../assets/images/apple-icon.svg");
-  background-repeat: no-repeat; */
-  /* transition: transform 0.3s ease;
-  animation: 200ms ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   position: relative;
   width: 97px;
   height: 98px;
 }
 
 .apple-btn:hover {
-  /* background-image: url("../assets/images/google-icon.svg"); */
   transform: translateY(20px);
-  /* box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); */
 }
 
 .apple-icon.default {
@@ -128,69 +157,6 @@ p {
   transform: scale(1.8);
 }
 
-@media (max-width: 430px) {
-  h1 {
-    font-size: 35px;
-    text-align: center;
-  }
-
-  p {
-    font-size: 20px;
-  }
-
-  .apple__google__twitter--logos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    width: 172px;
-    height: 60px;
-    margin-top: 31px;
-  }
-
-  .apple-btn {
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 30px;
-    background-size: contain;
-    background-color: #0c0417;
-    background-position: center;
-    /* background-image: url("../assets/images/apple-icon.svg");
-    background-repeat: no-repeat; */
-    transition: background-color 0.3s ease;
-    animation: 200ms ease-out;
-  }
-
-  .google-btn {
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 30px;
-    background-size: contain;
-    background-color: #0c0417;
-    background-position: center;
-    background-image: url("../assets/images/google-icon.svg");
-    background-repeat: no-repeat;
-    transition: background-color 0.3s ease;
-    animation: 200ms ease-out;
-  }
-
-  .twitter-btn {
-    width: 53px;
-    height: 50px;
-    border: none;
-    border-radius: 30px;
-    background-size: contain;
-    background-color: #0c0417;
-    background-position: center;
-    background-image: url("../assets/images/twitter-icon.svg");
-    background-repeat: no-repeat;
-    transition: background-color 0.3s ease;
-    animation: 200ms ease-out;
-  }
-}
-
 @media (max-width: 1000px) {
   h1 {
     font-size: 50px;
@@ -205,51 +171,65 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    width: 212px;
-    height: 75px;
+    gap: 8px;
+    width: 215px;
+    height: 85px;
     margin-top: 31px;
+    border-radius: 30px;
   }
 
   .apple-btn {
-    width: 61px;
-    height: 61px;
-    border: none;
-    border-radius: 30px;
-    background-size: contain;
-    background-color: #0c0417;
-    background-position: center;
-    /* background-image: url("../assets/images/apple-icon.svg");
-    background-repeat: no-repeat; */
-    transition: background-color 0.3s ease;
-    animation: 200ms ease-out;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  .apple-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .apple-btn:hover {
+    transform: translateY(12px);
   }
 
   .google-btn {
-    width: 61px;
-    height: 61px;
-    border: none;
-    border-radius: 30px;
-    background-size: contain;
-    background-color: #0c0417;
-    background-position: center;
-    background-image: url("../assets/images/google-icon.svg");
-    background-repeat: no-repeat;
-    transition: background-color 0.3s ease;
-    animation: 200ms ease-out;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  .google-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .google-btn:hover {
+    transform: translateY(12px);
   }
 
   .twitter-btn {
-    width: 64px;
-    height: 59px;
-    border: none;
-    border-radius: 30px;
-    background-size: contain;
-    background-color: #0c0417;
-    background-position: center;
-    background-image: url("../assets/images/twitter-icon.svg");
-    background-repeat: no-repeat;
-    transition: background-color 0.3s ease;
-    animation: 200ms ease-out;
+    width: 54px;
+    height: 49px;
+  }
+
+  .twitter-icon {
+    width: 53px;
+    height: 54px;
+  }
+
+  .twitter-btn:hover {
+    transform: translateY(12px);
+  }
+}
+
+@media (max-width: 430px) {
+  h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
   }
 }
