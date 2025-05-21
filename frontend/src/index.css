@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+  background-color: #333331;
+  padding: 30px 150px;
+  display: flex;
+  gap:20px;
+  font-size: 24px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
