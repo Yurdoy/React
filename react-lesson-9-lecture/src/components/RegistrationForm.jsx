@@ -10,8 +10,21 @@ const RegistrationForm = () => {
 
   const onSubmit = (data) => {
     console.log("Data submitted: ", data);
+    alert("Registration submitted");
   };
-  return <div></div>;
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <label>Username</label>
+        <input
+          {...register("username", { required: "Username is required" })}
+        />
+        {errors.username && <p>{errors.username.message}</p>}
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  );
 };
 
 export default RegistrationForm;
