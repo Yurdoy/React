@@ -1,0 +1,17 @@
+.main {
+  min-width: 1440px;
+  min-height: 600px;
+  position: relative;
+  background-image: url("../../../assets/images/main-bg-img.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  padding: 80px 40px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 110%;
+}

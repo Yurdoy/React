@@ -7,11 +7,13 @@ import AllProductsPage from "./pages/AllProductsPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CartPage from "./pages/CartPage";
 import CategoryProducts from "./pages/CategoryProducts";
+import Main from "./components/layouts/main/Main";
 
 function App() {
   return (
     <>
       <Header cartItemCount={0} />
+      <Main />
       <main>
         <Routes>
           <Route>
