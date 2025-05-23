@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomButton = () => {
+const CustomButton = (props) => {
   const { buttonText, onHandleClick, style } = props;
   return <button></button>;
 };

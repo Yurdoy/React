@@ -22,7 +22,7 @@ export const categorySlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchCategories.rejected, (state) => {
+      .addCase(fetchCategories.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       });
