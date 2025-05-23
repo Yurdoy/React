@@ -4,6 +4,9 @@ import cls from "../../layouts/main/Main.module.css";
 import { fetchCategories } from "../../../store/services/fetchCategories";
 import { useDispatch, useSelector } from "react-redux";
 import CustomButton from "../../ui/CustomButton";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import saleBanner from "../../../assets/images/sale-banner.svg";
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -12,6 +15,24 @@ const Main = () => {
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3333/sale/send",
+        data
+      );
+    } catch (error) {
+      console.error("Error while sending data", error);
+    }
+  };
+
   return (
     <div className={cls.main}>
       <NavLink to="/all_sales">
@@ -68,6 +89,47 @@ const Main = () => {
             <h3>{item.title}</h3>
           </NavLink>
         ))}
+      </div>
+      <div className={cls.discount_section}>
+        <h2>5% off on the first order</h2>
+        <div className={cls.discount_section_img_form}>
+          <img src={saleBanner} alt="Picture of animals" />
+          <form className={cls.discount_form} onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <label htmlFor="name">Name</label>
+              <input
+                id="name"
+                {...register("name", { required: "Name is compulsory" })}
+              />
+              {errors.name && <p>{errors.name.message}</p>}
+            </div>
+            <div>
+              <label htmlFor="number">Phone number</label>
+              <input
+                id="number"
+                type="number"
+                {...register("number", {
+                  required: "Phone number is compulsory",
+                })}
+              />
+              {errors.number && <p>{errors.number.message}</p>}
+            </div>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                {...register("email", { required: "Email is compulsory" })}
+              />
+              {errors.email && <p>{errors.email.message}</p>}
+            </div>
+            <CustomButton
+              buttonText={"Get a discount"}
+              type="submit"
+              style={{ marginTop: "20px", backgroundColor: "#007bff" }}
+            />
+          </form>
+        </div>
       </div>
     </div>
   );

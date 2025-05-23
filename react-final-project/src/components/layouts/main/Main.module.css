@@ -60,3 +60,34 @@ hr {
   height: auto;
   border-radius: 8px;
 }
+
+.discount_section {
+  /* min-width: 783px;
+  min-height: 360px;
+  position: relative;
+  background-image: url("../../../assets/images/sale-banner.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  background-color: #2451c6;
+}
+
+.discount_section > h2 {
+  color: #ffffff;
+  padding: 32px 32px 24px;
+  text-align: center;
+}
+
+.discount_section_img_form {
+  display: flex;
+}
+
+.discount_section_img_form > img {
+  padding: 0 0 0 32px;
+}
+
+.discount_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
