@@ -21,16 +21,32 @@ h1 {
   justify-content: space-between;
 }
 
+h2 {
+  padding-right: 32px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+hr {
+  width: 809px;
+  margin-top: 11px;
+  border: 1px solid #dddddd;
+}
+
 .categories_section_upper_title_btn {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 80px 40px 40px;
 }
 
 .categories_list {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 32px;
   flex-wrap: wrap;
+  padding-left: 12px;
 }
 
 .category_card {

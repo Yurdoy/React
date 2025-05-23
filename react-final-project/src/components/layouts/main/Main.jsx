@@ -35,10 +35,20 @@ const Main = () => {
       <div className={cls.categories_section}>
         <div className={cls.categories_section_upper_title_btn}>
           <h2>Categories</h2>
+          <hr />
           <CustomButton
             buttonText={"All categories"}
             to="/categories"
-            style={{ padding: "8px 16px", backgroundColor: "#28a745" }}
+            style={{
+              marginTop: "10px",
+              padding: "8px 16px",
+              backgroundColor: "white",
+              color: "#DDDDDD",
+              border: "1px solid #DDDDDD",
+              fontWeight: "500",
+              fontSize: "16px",
+              lineHeight: "126%",
+            }}
             type="button"
           />
         </div>
