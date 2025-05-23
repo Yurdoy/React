@@ -1,4 +1,4 @@
-.main {
+.background_img_main_top {
   min-width: 1440px;
   min-height: 600px;
   position: relative;
@@ -14,4 +14,33 @@ h1 {
   font-weight: 700;
   font-size: 96px;
   line-height: 110%;
+}
+
+.categories_section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categories_section_upper_title_btn {
+  display: flex;
+  align-items: center;
+  padding: 80px 40px 40px;
+}
+
+.categories_list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category_card {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category_image {
+  width: 316px; /* или другой размер */
+  height: auto;
+  border-radius: 8px;
 }
