@@ -56,7 +56,7 @@ hr {
 }
 
 .category_image {
-  width: 316px; /* или другой размер */
+  width: 316px;
   height: auto;
   border-radius: 8px;
 }
@@ -105,4 +105,50 @@ input::placeholder {
   font-size: 20px;
   font-weight: 500;
   color: #ffffff;
+}
+
+.sale_section_upper_title_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px 40px;
+}
+
+.sale_section_upper_title_btn > hr {
+  width: 1140px;
+  margin-top: 11px;
+  border: 1px solid #dddddd;
+}
+
+.sale_products_list {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-left: 12px;
+}
+
+.products_list {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-left: 12px;
+}
+
+.product_card {
+  width: 316px;
+  height: 422px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  text-align: center;
+  text-wrap: pretty;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product_image {
+  width: 316px;
+  height: auto;
+  border-radius: 8px;
 }

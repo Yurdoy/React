@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import cls from "../../layouts/main/Main.module.css";
 import { fetchCategories } from "../../../store/services/fetchCategories";
@@ -11,10 +11,28 @@ import saleBanner from "../../../assets/images/sale-banner.svg";
 const Main = () => {
   const dispatch = useDispatch();
   const allCategories = useSelector((state) => state.category.category);
+  const [discountedProducts, setDiscountedProducts] = useState([]);
 
   useEffect(() => {
     dispatch(fetchCategories());
+    fetchDiscountedProducts();
   }, [dispatch]);
+
+  const fetchDiscountedProducts = async () => {
+    try {
+      const response = await axios.get("http://localhost:3333/products/all");
+      const products = response.data;
+      const discounted = products.filter(
+        (product) => product.discount_price !== null
+      );
+      const randomProducts = discounted
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 4);
+      setDiscountedProducts(randomProducts);
+    } catch (error) {
+      console.error("Error while receiving products with discount", error);
+    }
+  };
 
   const {
     register,
@@ -141,6 +159,45 @@ const Main = () => {
               }}
             />
           </form>
+        </div>
+      </div>
+      <div className={cls.sale_section}>
+        <div className={cls.sale_section_upper_title_btn}>
+          <h2>Sale</h2>
+          <hr />
+          <CustomButton
+            buttonText={"All sales"}
+            to="/discount"
+            style={{
+              marginTop: "10px",
+              padding: "8px 16px",
+              backgroundColor: "white",
+              color: "#DDDDDD",
+              border: "1px solid #DDDDDD",
+              fontWeight: "500",
+              fontSize: "16px",
+              lineHeight: "126%",
+            }}
+            type="button"
+          />
+        </div>
+        <div className={cls.sale_products_list}>
+          {discountedProducts.map((product) => (
+            <NavLink
+              to={`/product/${product.id}`}
+              key={product.id}
+              className={cls.product_card}
+            >
+              <img
+                src={`http://localhost:3333${product.image}`}
+                alt={product.title}
+                className={cls.product_image}
+              />
+              <h3>{product.title}</h3>
+              <p>Price: {product.price} $</p>
+              <div className={cls.discount_tag}>-{product.discount_price}</div>
+            </NavLink>
+          ))}
         </div>
       </div>
     </div>
