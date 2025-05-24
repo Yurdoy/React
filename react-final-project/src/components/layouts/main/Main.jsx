@@ -96,37 +96,49 @@ const Main = () => {
           <img src={saleBanner} alt="Picture of animals" />
           <form className={cls.discount_form} onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name"></label>
               <input
                 id="name"
                 {...register("name", { required: "Name is compulsory" })}
+                placeholder="Name"
               />
               {errors.name && <p>{errors.name.message}</p>}
             </div>
             <div>
-              <label htmlFor="number">Phone number</label>
+              <label htmlFor="tel"></label>
               <input
-                id="number"
-                type="number"
-                {...register("number", {
+                id="tel"
+                type="tel"
+                {...register("tel", {
                   required: "Phone number is compulsory",
                 })}
+                placeholder="Phone number"
               />
-              {errors.number && <p>{errors.number.message}</p>}
+              {errors.tel && <p>{errors.tel.message}</p>}
             </div>
             <div>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email"></label>
               <input
                 id="email"
                 type="email"
                 {...register("email", { required: "Email is compulsory" })}
+                placeholder="Email"
               />
               {errors.email && <p>{errors.email.message}</p>}
             </div>
             <CustomButton
               buttonText={"Get a discount"}
               type="submit"
-              style={{ marginTop: "20px", backgroundColor: "#007bff" }}
+              style={{
+                width: "407px",
+                padding: "12px 20px",
+                marginTop: "10px",
+                backgroundColor: "#FFFFFF",
+                color: "#282828",
+                fontWeight: "600",
+                fontSize: "20px",
+                lineHeight: "130%",
+              }}
             />
           </form>
         </div>
