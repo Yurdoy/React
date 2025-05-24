@@ -115,7 +115,7 @@ input::placeholder {
 }
 
 .sale_section_upper_title_btn > hr {
-  width: 1140px;
+  width: 1085px;
   margin-top: 11px;
   border: 1px solid #dddddd;
 }
@@ -148,7 +148,8 @@ input::placeholder {
 }
 
 .product_image {
-  width: 316px;
-  height: auto;
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
   border-radius: 8px;
 }

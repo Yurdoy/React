@@ -8,6 +8,7 @@ import AllSalesPage from "./pages/AllSalesPage";
 import CartPage from "./pages/CartPage";
 import CategoryProducts from "./pages/CategoryProducts";
 import Main from "./components/layouts/main/Main";
+import Footer from "./components/layouts/footer/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           </Route>
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
