@@ -4,7 +4,7 @@
   font-size: 64px;
 }
 
-.footer_contacts_social {
+.footer_grid_block {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: auto auto;
@@ -12,17 +12,12 @@
   padding: 0 40px;
 }
 
-.footer_contacts_phone_address {
+.footer_contacts_social_address_hours {
   background-color: #f1f3f4;
   border-radius: 10px;
 }
 
-.footer_contacts_social_hours {
-  background-color: #f1f3f4;
-  border-radius: 10px;
-}
-
-p {
+.footer_paragraph_phone_address_social_hours {
   font-size: 20px;
   font-weight: 500;
   line-height: 130%;
@@ -30,9 +25,21 @@ p {
   padding: 32px 0 16px 32px;
 }
 
-h4 {
+.footer_paragraph_contact_text {
   font-size: 40px;
   font-weight: 400;
   line-height: 110%;
   padding: 0 32px 32px;
+}
+
+.footer_paragraph_contact_insta_icons {
+  padding: 0 0 0 32px;
+}
+
+.footer_paragraph_contact_wa_icons {
+  padding: 0 0 0 16px;
+}
+
+.map_container {
+  padding: 32px 40px 80px;
 }
