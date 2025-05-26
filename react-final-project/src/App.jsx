@@ -7,19 +7,18 @@ import AllProductsPage from "./pages/AllProductsPage";
 import AllSalesPage from "./pages/AllSalesPage";
 import CartPage from "./pages/CartPage";
 import CategoryProducts from "./pages/CategoryProducts";
-import Main from "./components/layouts/main/Main";
 import Footer from "./components/layouts/footer/Footer";
 
 function App() {
   return (
     <>
       <Header cartItemCount={0} />
-      <Main />
       <main>
         <Routes>
           <Route>
             <Route path="/" element={<MainPage />} />
             <Route path="/categories" element={<CategoriesPage />} />
+            <Route path="/categories/:id" element={<CategoryProducts />} />
             <Route path="/products" element={<AllProductsPage />} />
             <Route path="/sales" element={<AllSalesPage />} />
             <Route path="/categories/:id" element={<CategoryProducts />} />

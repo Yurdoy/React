@@ -1,0 +1,34 @@
+.categories_page > hr {
+  width: 1440px;
+}
+
+.categories_header {
+  padding: 40px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.categories_grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 32px;
+  padding: 0 40px;
+}
+
+.grig_categories_card > img {
+  width: 316px;
+  height: 350px;
+}
+
+.grig_categories_card > h3 {
+  text-align: center;
+}
+
+.grid_card_title {
+  padding-top: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 130%;
+}
