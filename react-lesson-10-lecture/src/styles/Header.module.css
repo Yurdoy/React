@@ -1,0 +1,23 @@
+.header {
+  /* max-width: 1920px; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 368px;
+  padding: 38px 0 38px 130px;
+  background-color: #3f5cc0;
+}
+
+.nav {
+  display: flex;
+}
+
+a {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration: none;
+  color: #090808cc;
+  padding: 9px 60px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
