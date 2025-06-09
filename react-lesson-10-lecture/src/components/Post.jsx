@@ -1,23 +1,16 @@
 import React from "react";
 
-const Post = ({ title, body, onEdit, onDelete }) => {
+const Post = ({ title, body, onDelete }) => {
   return (
-    <div>
-      <article>
-        <header>
-          <h2>{title}</h2>
-          <div>
-            <button onClick={onEdit} aria-label="Edit post" title="Edit">
-              Edit
-            </button>
-            <button onClick={onDelete} aria-label="Delete post" title="Delete">
-              Delete
-            </button>
-          </div>
-        </header>
-        <p>{body}</p>
-      </article>
-    </div>
+    <article>
+      <header>
+        <h2>{title}</h2>
+      </header>
+      <p>{body}</p>
+      <button onClick={onDelete} title="Delete Post">
+        Delete
+      </button>
+    </article>
   );
 };
 

@@ -1,19 +1,18 @@
 import React from "react";
 import Post from "./Post";
 
-const PostList = ({ posts, onEdit, onDelete }) => {
+const PostList = ({ posts, onDelete }) => {
   if (!posts.length) {
     return <p>No posts available</p>;
   }
 
   return (
     <main>
-      {posts.map(({ id, title, body }) => (
+      {posts.map(({ id, title, text }) => (
         <Post
           key={id}
           title={title}
-          body={body}
-          onEdit={() => onEdit({ id, title, body })}
+          body={text}
           onDelete={() => onDelete(id)}
         />
       ))}

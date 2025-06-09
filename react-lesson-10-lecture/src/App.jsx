@@ -4,22 +4,24 @@ import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
 import styles from "./App.module.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [posts, setPosts] = useState([]);
-  const [editingPost, setEditingPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch(
+        const res = await axios.get(
           "https://683ef3211cd60dca33ddb0f3.mockapi.io/posts"
         );
-        if (!res.ok) throw new Error("Failed to fetch posts");
-        const data = await res.json();
-        setPosts(data);
+        setPosts(res.data);
       } catch (err) {
-        console.log(err);
+        setError("Failed to fetch posts");
+      } finally {
+        setLoading(false);
       }
     };
     fetchPosts();
@@ -29,19 +31,16 @@ function App() {
     setPosts((prev) => [newPost, ...prev]);
   };
 
-  const updatePost = (updatePost) => {
-    setPosts((prev) =>
-      prev.map((post) => (post.id === updatePost.id ? updatePost : post))
-    );
-    setEditingPost(null);
-  };
-
-  const deletePost = (id) => {
-    setPosts((prev) => prev.filter((post) => post.id !== id));
-  };
-
-  const editPost = (post) => {
-    setEditingPost(post);
+  const deletePost = async (id) => {
+    try {
+      await axios.delete(
+        `https://683ef3211cd60dca33ddb0f3.mockapi.io/posts/${id}`
+      );
+      setPosts((prev) => prev.filter((post) => post.id !== id));
+    } catch (error) {
+      console.error("Error deleting post:", error);
+      setError("Failed to delete post");
+    }
   };
 
   return (
@@ -49,13 +48,12 @@ function App() {
       <div>
         <Header />
         <main className={styles.main}>
-          <PostList posts={posts} onEdit={editPost} onDelete={deletePost} />
-          <PostForm
-            onAdd={addPost}
-            onUpdate={updatePost}
-            editingPost={editingPost}
-            onCancel={() => setEditingPost(null)}
-          />
+          {loading && <p>Loading posts...</p>}
+          {error && <p>{error}</p>}
+          {!loading && !error && (
+            <PostList posts={posts} onDelete={deletePost} />
+          )}
+          <PostForm onAdd={addPost} />
         </main>
       </div>
     </>

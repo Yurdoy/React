@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import styles from "../styles/PostForm.module.css";
 
-const PostForm = () => {
+const PostForm = ({ onAdd }) => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
@@ -16,6 +16,7 @@ const PostForm = () => {
       .post("https://683ef3211cd60dca33ddb0f3.mockapi.io/posts", postData)
       .then((response) => {
         console.log("Data sent successfully", response);
+        onAdd(response.data);
         reset();
       })
       .catch((error) => {
