@@ -1,57 +1,23 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import Post from "./Post";
 
-const PostList = () => {
-  const [posts, setPosts] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchPosts() {
-      try {
-        setLoading(true);
-        const response = await fetch(
-          "https://683ef3211cd60dca33ddb0f3.mockapi.io/posts"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch posts");
-        }
-        const data = await response.json();
-        setPosts(data);
-      } catch (err) {
-        setError(err.message || "Unknown error");
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchPosts();
-  }, []);
-
-  if (loading) {
-    return (
-      <main>
-        <p>Loading posts...</p>
-      </main>
-    );
-  }
-
-  if (error) {
-    return (
-      <main>
-        <p>Error: {error}</p>
-      </main>
-    );
+const PostList = ({ posts, onEdit, onDelete }) => {
+  if (!posts.length) {
+    return <p>No posts available</p>;
   }
 
   return (
-    <div>
-      <main>
-        {posts.map(({ id, title, body }) => (
-          <Post key={id} title={title} body={body} />
-        ))}
-      </main>
-    </div>
+    <main>
+      {posts.map(({ id, title, body }) => (
+        <Post
+          key={id}
+          title={title}
+          body={body}
+          onEdit={() => onEdit({ id, title, body })}
+          onDelete={() => onDelete(id)}
+        />
+      ))}
+    </main>
   );
 };
 
