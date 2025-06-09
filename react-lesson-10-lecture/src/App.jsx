@@ -47,7 +47,7 @@ function App() {
     <>
       <div>
         <Header />
-        <main className={styles.main}>
+        <main>
           {loading && <p>Loading posts...</p>}
           {error && <p>{error}</p>}
           {!loading && !error && (

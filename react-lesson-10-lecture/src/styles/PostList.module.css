@@ -1,0 +1,10 @@
+/* .postList_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.postList_header {
+  text-align: center;
+  font-weight: 700;
+}
