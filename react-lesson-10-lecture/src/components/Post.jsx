@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/Post.module.css";
 import userLogo from "../assets/user-logo.svg";
 
-const Post = ({ title, body, onDelete }) => {
+const Post = ({ title, body, id, onDelete }) => {
   return (
     <article className={styles.article}>
       <div className={styles.posts}>
@@ -10,10 +10,13 @@ const Post = ({ title, body, onDelete }) => {
           <img src={userLogo} alt="User Logo" />
           <p>User logo</p>
         </div>
-        <header>
-          <h2>{title}</h2>
-        </header>
-        <p>{body}</p>
+        <div className={styles.postBody}>
+          <header>
+            <h2>{title}</h2>
+          </header>
+          <p>{body}</p>
+        </div>
+        <p>{id}</p>
         <button onClick={onDelete} title="Delete Post">
           Delete
         </button>
