@@ -8,7 +8,7 @@ const PostList = ({ posts, onDelete }) => {
   }
 
   return (
-    <main className={styles.postList_main}>
+    <div className={styles.postList_main}>
       <h2 className={styles.postList_header}>Post List</h2>
       {posts.map(({ id, title, text }) => (
         <Post
@@ -18,7 +18,7 @@ const PostList = ({ posts, onDelete }) => {
           onDelete={() => onDelete(id)}
         />
       ))}
-    </main>
+    </div>
   );
 };
 

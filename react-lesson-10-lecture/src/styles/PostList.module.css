@@ -1,10 +1,12 @@
-/* .postList_main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
+.postList_main {
+  margin: 64px 110px 102px 130px;
+  background: #7d9fff;
+  border: 1px solid #5ecfff;
+}
 
 .postList_header {
   text-align: center;
   font-weight: 700;
+  align-content: center;
+  padding: 60px 365px 124px;
 }

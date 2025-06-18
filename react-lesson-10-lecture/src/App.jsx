@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./components/Header";
 import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
-import styles from "./App.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
