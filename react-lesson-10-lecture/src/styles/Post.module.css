@@ -25,3 +25,26 @@
   gap: 13px;
   padding: 16px 104px 13px 20px;
 }
+
+.postBody > h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.postBody > p {
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.btnBlock > p {
+  padding: 25px 0 45px 65px;
+}
+
+.btnBlock > button {
+  padding: 9px 11px;
+  background: rgba(13, 61, 48, 0.4);
+  border: none;
+  margin: 5px 0 0 65px;
+}

@@ -16,6 +16,7 @@ const PostList = ({ posts, onDelete }) => {
           title={title}
           body={text}
           onDelete={() => onDelete(id)}
+          id={id}
         />
       ))}
     </div>

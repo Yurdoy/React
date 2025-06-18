@@ -16,10 +16,12 @@ const Post = ({ title, body, id, onDelete }) => {
           </header>
           <p>{body}</p>
         </div>
-        <p>{id}</p>
-        <button onClick={onDelete} title="Delete Post">
-          Delete
-        </button>
+        <div className={styles.btnBlock}>
+          <p>post id: {id}</p>
+          <button onClick={onDelete} title="Delete Post">
+            Delete
+          </button>
+        </div>
       </div>
     </article>
   );
